@@ -1,0 +1,21 @@
+{
+  "name": "prompt-firewall-project",
+  "version": "1.0.0",
+  "description": "Prompt Firewall - AI Chatbot Security and Enforcement System",
+  "scripts": {
+    "start:backend": "npm start --prefix backend",
+    "dev:backend": "npm run dev --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "test": "npm test --prefix backend",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "keywords": [
+    "ai-security",
+    "prompt-injection",
+    "prompt-firewall",
+    "llm-guardrails"
+  ],
+  "author": "Prompt Firewall Security Team",
+  "license": "ISC"
+}
