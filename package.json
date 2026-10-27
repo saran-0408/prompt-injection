@@ -1,0 +1,20 @@
+{
+  "name": "prompt-file-wall-detector",
+  "version": "1.0.0",
+  "description": "Prompt Firewall API and detector evaluation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node api-test.js",
+    "evaluate": "node evaluate.js",
+    "test:integration": "node integration-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1"
+  }
+}
