@@ -1,0 +1,13 @@
+node_modules
+.env
+skar.db
+.DS_Store
+
+.vercel
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+service-account.json
+*.db
