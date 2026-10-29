@@ -1,85 +1,60 @@
+# 🤖 JARVIS — Personal AI Assistant
 
-# Prompt Firewall — Prompt Injection Detection
+A stunning Jarvis-like personal AI chatbot with:
+- 💬 **Multi-turn chat** with memory
+- 🧵 **Persistent transcript** — starting a new chat keeps earlier replies visible and separates sessions
+- 🔍 **Real-time web search** (Google Search grounding)
+- 🎨 **AI Image generation** on demand
+- 🎙️ **Voice input** (browser Web Speech API)
+- ⚡ **Streaming responses** (typewriter effect)
+- 🌐 **Beautiful HUD UI** — Iron Man inspired
 
-## Project Overview
-Prompt Firewall is a Node.js application that detects potentially malicious prompts before they reach an AI chatbot.
+## Quick Start
 
-## Features
-- Prompt injection detection
-- Instruction override detection
-- System prompt and secret extraction detection
-- Jailbreak attempt detection
-- Suspicious request review
-- Personal information request detection
-- REST API for chatbot integration
-- Input validation and request size limits
-- Basic automated testing and evaluation
+### 1. Get your free API key
+→ https://aistudio.google.com/app/apikey
 
-## Technologies
-- JavaScript
-- Node.js
-- Express.js
-- Regular expressions
-- REST API
-
-## API Endpoint
-
-POST /detect
-
-### Request
-```json
-{
-  "prompt": "Explain quantum computing"
-}
+### 2. Set your key
+```bash
+# Copy the example and fill in your key
+copy .env.example .env
+# Edit .env and replace: GEMINI_API_KEY=your_actual_key_here
 ```
 
-### Example response
-```json
-{
-  "decision": "allow",
-  "riskScore": 0.05,
-  "reason": ["No configured rule matched"]
-}
-```
-
-## Decisions
-- `allow`: The prompt may continue to the chatbot.
-- `review`: The prompt needs additional inspection.
-- `block`: The prompt is rejected.
-
-## Run Locally
-Install dependencies:
-
+### 3. Run JARVIS
 ```bash
 npm install
+npm start
 ```
 
-Start the API:
+Open: http://localhost:3000
 
-```bash
-node server.js
+## Usage Examples
+
+| What you say | What happens |
+|---|---|
+| "What's the latest news on SpaceX?" | Web search + answer |
+| "Generate a cyberpunk city at night" | AI image generation |
+| "Draw a futuristic robot assistant" | AI image generation |
+| "Explain quantum entanglement" | Smart answer |
+| "Who won the last World Cup?" | Live web search |
+| 🎙️ Click mic button | Voice-to-text input |
+
+## File Structure
+```
+jarvis-bot/
+├── server.js          ← Express backend (Gemini API)
+├── public/
+│   ├── index.html     ← HUD-styled UI
+│   ├── style.css      ← Jarvis dark theme
+│   └── app.js         ← Frontend logic
+├── .env               ← Your API key (keep secret!)
+└── package.json
 ```
 
-The local API runs on port 3001.
-
-## Test
-Run detector tests:
-
-```bash
-node test.js
-```
-
-Run evaluation:
-
-```bash
-node evaluate.js
-```
-
-Run API tests while the server is running:
-
-```bash
-node api-test.js
-```
-
-## Limitations
-This is a prototype using rule-based detection. It may miss some attacks or flag legitimate prompts. Test accuracy applies only to the test cases used. Production deployment requires stronger security testing, access controls, and monitoring.
+## Tech Stack
+- **Backend**: Node.js + Express
+- **AI**: Google Gemini API (`@google/genai`)
+- **Chat model**: `gemini-3.8-flash` + Google Search
+- **Image model**: `gemini-3.1-flash-image`
+- **Frontend**: Vanilla HTML/CSS/JS (no frameworks!)
