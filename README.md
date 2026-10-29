@@ -58,3 +58,13 @@ jarvis-bot/
 - **Chat model**: `gemini-3.8-flash` + Google Search
 - **Image model**: `gemini-3.1-flash-image`
 - **Frontend**: Vanilla HTML/CSS/JS (no frameworks!)
+
+## Additional Projects
+
+The following projects are kept in separate folders so the JARVIS app at the repository root remains unchanged:
+
+- `eee-project/` is a React/Vite prompt-injection scanner demo. Run `npm install` and `npm run dev` from that folder.
+- `prompt-wall-detector/` is a Node.js/Express rule-based detector API. Run `npm install` and `npm start` from that folder. Its API tests expect the server to be running.
+- `prompt-firewall/` contains a separate backend and frontend. From that folder, run `npm run install:all`, then use `npm run start:backend` and `npm run start:frontend` in separate terminals. Run backend tests with `npm test`.
+
+Each project has its own dependencies and configuration. The detector projects are prototypes; review their security limitations before production use.
